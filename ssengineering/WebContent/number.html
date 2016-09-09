@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> :: Number ::</title>
+<style>
+	body, html {
+          height: 100%;
+          margin: 0;
+          padding: 10px;
+          -webkit-font-smoothing: antialiased;
+          font-weight: 100;
+          background: #aadfeb;
+          text-align: center;
+          font-family: helvetica;
+      }
+       
+      .tabs input[type=radio] {
+          position: absolute;
+          top: -9999px;
+          left: -9999px;
+      }
+      .tabs {
+        float: none;
+        list-style: none;
+        position: relative;
+        padding: 0;        
+      }
+      .tabs li{
+        float: left;
+      }
+      .tabs label {
+          display: block;
+          padding: 10px 20px;
+          border-radius: 2px 2px 0 0;
+          color: #08C;
+          font-size: 24px;
+          font-weight: normal;
+          font-family: 'Lily Script One', helveti;
+          background: rgba(255,255,255,0.2);
+          cursor: pointer;
+          position: relative;
+          top: 3px;
+          -webkit-transition: all 0.2s ease-in-out;
+          -moz-transition: all 0.2s ease-in-out;
+          -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
+      }
+      .tabs label:hover {
+        background: rgba(255,255,255,0.5);
+        top: 0;
+      }
+       
+      [id^=tab]:checked + label {
+        background: #08C;
+        color: white;
+        top: 0;
+      }
+       
+      [id^=tab]:checked ~ [id^=tab-content] {
+          display: block;
+      }
+      .tab-content{
+        z-index: 2;
+        display: none;
+        text-align: left;
+        width: 100%;
+        font-size: 20px;
+        line-height: 140%;
+        padding-top: 10px;
+        background: #08C;
+        padding: 15px;
+        color: white;
+        position: absolute;
+        top: 53px;
+        left: 0;
+        box-sizing: border-box;
+        -webkit-animation-duration: 0.5s;
+        -o-animation-duration: 0.5s;
+        -moz-animation-duration: 0.5s;
+        animation-duration: 0.5s;
+      }
+</style>
+</head>
+<body>
+<ul class="tabs">
+		<li>
+          <input type="radio" checked name="tabs" id="tab5">
+          <label for="tab5">PREF</label>
+          <div id="tab-content5" class="tab-content animated fadeIn">
+          	<textarea rows = "10" style = "width: 100%">
+            	javascript: function E()
+            	{ 
+            		document.getElementById('PREFERRED').click();
+            		document.getElementsByName('PREFERRED')[0].checked = true;
+            		fetchBankMsg(document.getElementsByName('PREFERRED')[0]);
+            		document.getElementById('validate').click();
+            	} E()
+          	</textarea>  	
+          </div>
+        </li>
+        <li>
+          <input type="radio"  name="tabs" id="tab1">
+          <label for="tab1">IB</label>
+          <div id="tab-content1" class="tab-content animated fadeIn">
+    		Bank Page:
+    		<textarea rows = "10" style = "width: 100%">    			
+				javascript: function E()
+				{ 
+					document.getElementById('DEBIT_CARD').click();
+					document.getElementsByName('DEBIT_CARD')[2].checked = true;
+					fetchBankMsg(document.getElementsByName('DEBIT_CARD')[2]);
+					document.getElementById('validate').click();
+				} E()
+    		</textarea>
+    		
+    		Mode Page:
+    		<textarea rows = "4" style = "width: 100%">    			
+				javascript:{document.getElementById('debit').click();}
+				javascript:{document.getElementById('netbank').click();}
+    		</textarea>
+    		
+    		CRD Detail Page:
+    		<textarea rows = "14" style = "width: 100%">    			
+				javascript: function E()
+				{
+					document.getElementsByName('Ecom_Payment_Card_Number')[0].value='5044338051405101246';
+					document.getElementsByName('Ecom_Payment_Card_ExpDate_Month')[0].value='3';
+					document.getElementsByName('Ecom_Payment_Card_ExpDate_Year')[0].value='2024';
+					document.getElementsByName('Ecom_Payment_Card_Name')[0].value='zaheer khorajiya';
+					document.getElementsByName('Ecom_Payment_Pin')[0].value='XXXXX';
+					console.log('success');
+					document.getElementById('SubmitBtn').click();
+				}E()
+				
+				javascript:{document.getElementsByName('Button_Pay')[0].click()};
+    		</textarea>
+    		
+    		INB Page
+    		<textarea rows = "18" style = "width: 100%"> 
+    			javascript: function E(){
+				document.getElementsByName('uid')[0].value='admin';
+				document.getElementsByName('pwd')[0].value='admin';
+				document.getElementsByName('btClear')[0].click();
+				}E()
+				
+				javascript: function E(){
+				document.getElementsByName('fromAcc')[0].value='SB-914404961-09999';
+				document.getElementsByName('password')[0].value='admin';
+				submitRequest();
+				console.log('success');
+				}E()
+    		</textarea>
+    		
+          </div>
+        </li>
+        <li>
+          <input type="radio" name="tabs" id="tab2">
+          <label for="tab2">SBI</label>
+          <div id="tab-content2" class="tab-content animated fadeIn">
+            CRD Page
+            <textarea rows = "10" style = "width: 100%">
+            		javascript:function E(){
+					document.getElementById('debitCardNumber').value='5196190241854647';
+					document.getElementById('debiMonth').value='4';
+					document.getElementById('debiYear').value='2035';
+					document.getElementById('debitCardholderName').value='ZAHEER KHORAJIYA';
+					document.getElementById('cardPin').value='XXXX';
+					document.getElementById('passline').focus();
+					console.log('success');} E()
+          	</textarea>
+          	
+          	INB
+          	<textarea rows = "15" style = "width: 100%">
+          			javascript:function E(){
+				document.getElementsByName('userName')[0].value='XXXXXX';
+				document.getElementsByName('password')[0].value='XXXXXX';
+				document.getElementById('Button2').click();
+				}E()
+				============================================================================================================================
+				javascript:function E(){document.getElementById('Go').click();}E()
+				============================================================================================================================
+				javascript:function E(){
+				document.getElementById('onlineOTP').checked = true;
+				document.getElementById('confirmButton').click();
+				}E()
+          	</textarea>
+          </div>
+        </li>
+        <li>
+          <input type="radio" name="tabs" id="tab3">
+          <label for="tab3">BOI</label>
+          <div id="tab-content3" class="tab-content animated fadeIn">
+          	Bank Page
+          	<textarea rows = "8" style = "width: 100%">
+          		javascript: function E(){
+          		document.getElementById('DEBIT_CARD').click();
+				document.getElementsByName('DEBIT_CARD')[4].checked = true;
+				fetchBankMsg(document.getElementsByName('DEBIT_CARD')[4]);
+				document.getElementById('validate').click();} E()
+          	</textarea>
+          	
+          	Mode Page
+          	<textarea rows = "2" style = "width: 100%">
+          		javascript:{document.getElementsByName('txtBankID')[0].click();}
+          	</textarea>
+          	
+          	CRD Page
+            <textarea rows = "10" style = "width: 100%">
+            		javascript:function E(){
+            		document.getElementById('cnumber').value='4052380407044903';
+            		document.getElementById('cname2').value='Z I KHORAJIYA';
+            		document.getElementById('expmon').value='04';
+            		document.getElementById('expyr').value='2020';
+            		document.getElementById('cvv2').value='XXXX';
+            		console.log('success');} E()
+          	</textarea>          	
+          </div>
+        </li>
+        <li>
+          <input type="radio" name="tabs" id="tab4">
+          <label for="tab4">CC</label>
+          <div id="tab-content4" class="tab-content animated fadeIn">
+            HDFC CC
+            <textarea rows = "14" style = "width: 100%">
+            	javascript: function E(){
+				$('#CREDIT_CARD').click();
+				document.getElementsByName('CREDIT_CARD')[2].checked = true;
+				fetchBankMsg(document.getElementsByName('CREDIT_CARD')[2]);
+				$('#card_type_id').val('MC');
+				$('#card_no_id').val('1234567812345678');
+				$('#card_expiry_mon_id').val('05');
+				$('#card_expiry_year_id').val('2025');
+				$('#cvv_no_id').val('808');
+				$('#card_name_id').val('ABC XYZ');
+				$('#captcha_txt').focus();
+				}E()
+            </textarea>
+            
+            HDFC Pass
+            <textarea rows = "5" style = "width: 100%">
+            	javascript: function E(){
+				document.getElementsByName('txtPassword')[0].value='XXXXXX';
+				document.getElementById('cmdSubmit').click();
+				}E()
+            </textarea>
+            
+            ICICI CC
+            <textarea rows = "15" style = "width: 100%">
+            	javascript:function E(){
+				$('#CREDIT_CARD').click();
+				document.getElementsByName('CREDIT_CARD')[4].checked = true;
+				fetchBankMsg(document.getElementsByName('CREDIT_CARD')[4]);
+				document.getElementById('card_no_id').value='XXXXXXXXXXXX';
+				document.getElementById('card_expiry_mon_id').value='01';
+				document.getElementById('card_expiry_year_id').value='2019';
+				document.getElementById('cvv_no_id').value='555';
+				document.getElementById('card_name_id').value='usama';
+				document.getElementById('captcha_txt').focus();
+				}
+				E()
+            </textarea>
+          </div>
+        </li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+
+	<!-- <http auto-config="true"  use-expressions="true">
+		<intercept-url pattern="/login" access="permitAll" />
+		<intercept-url pattern="/logout" access="permitAll" />
+		<intercept-url pattern="/accessdenied" access="permitAll" />
+		<intercept-url pattern="/**" access="hasRole('ROLE_USER')" />
+		<form-login login-page="/login" default-target-url="/list" authentication-failure-url="/accessdenied" />
+		<logout logout-success-url="/logout" />
+	</http>
+
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider>
+			<jdbc-user-service data-source-ref="dataSource"
+ 
+		   users-by-username-query="
+		     SELECT USERNAME, PASSWORD, CASE ENABLED WHEN 1 THEN 'true' ELSE 'false' END 'ENABLED' 
+		     FROM TBL_USERS 
+		     WHERE USERNAME=?;"
+ 
+		   authorities-by-username-query="
+		    SELECT u.USERNAME, r.ROLENAME 
+			FROM TBL_USERS u, TBL_USER_ROLE r
+			WHERE u.ID = r.USERID
+			AND u.USERNAME=?;"
+ 
+			/>
+		</authentication-provider>
+	</authentication-manager> -->
+	
+	<http auto-config="true" use-expressions="true">
+		<!-- <intercept-url pattern="/admin**" access="ROLE_USER" />
+		<intercept-url pattern="/forAll/**" access="permitAll" /> -->
+		<!-- <intercept-url pattern="/**" access="isAuthenticated()" /> -->
+		<!-- <intercept-url pattern="/*" access="isAuthenticated()" /> -->		
+		<form-login 
+		    login-page="/login" 
+		    default-target-url="/home" 
+			authentication-failure-url="/login?error" 
+			username-parameter="username"
+			password-parameter="password" />
+		<logout invalidate-session="true" logout-success-url="/login?logout" />
+		<!-- enable csrf protection -->
+		<!-- <csrf/> -->
+	</http>
+
+	<authentication-manager>
+		<authentication-provider>
+		  <user-service>
+			<user name="admin" password="admin@sse" authorities="ROLE_USER" />
+		  </user-service>
+		</authentication-provider>		
+	</authentication-manager>
+	
+
+</beans:beans>
